@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Enum for the different flavours avaliable in the Soda drink.
@@ -56,6 +56,54 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
             get { return size; }
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            switch (size)
+            {
+                case Size.Large:
+                    sb.Append("Large ");
+                    break;
+                case Size.Medium:
+                    sb.Append("Medium ");
+                    break;
+                case Size.Small:
+                    sb.Append("Small ");
+                    break;
+                default:
+                    break;
+            }
+            switch (Flavor)
+            {
+                case SodasaurusFlavor.Cherry:
+                    sb.Append("Cherry ");
+                    break;
+                case SodasaurusFlavor.Chocolate:
+                    sb.Append("Chocolate ");
+                    break;
+                case SodasaurusFlavor.Cola:
+                    sb.Append("Cola ");
+                    break;
+                case SodasaurusFlavor.Lime:
+                    sb.Append("Lime ");
+                    break;
+                case SodasaurusFlavor.Orange:
+                    sb.Append("Orange ");
+                    break;
+                case SodasaurusFlavor.RootBeer:
+                    sb.Append("RootBeer ");
+                    break;
+                case SodasaurusFlavor.Vanilla:
+                    sb.Append("Vanilla ");
+                    break;
+                default:
+                    break;
+            }
+
+            sb.Append("Sodasaurus");
+            return sb.ToString();
         }
     }
 }

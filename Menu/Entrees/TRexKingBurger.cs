@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class TRexKingBurger : SteakosaurusBurger
     {
@@ -45,5 +45,10 @@ namespace DinoDiner.Menu.Entrees
         {
             _mayo = false;
         }
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
+
     }
 }

@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
 
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -34,7 +28,9 @@ namespace DinoDiner.Menu.Drinks
         /// Removes Ice from the drink
         /// </summary>
         public void HoldIce() { Ice = false; }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public abstract Size Size { get; set; }
     }
 }

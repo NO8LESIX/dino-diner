@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// Creates a new instance of MeteorMacAndCheese as a small side
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             size = Size.Small;
             Calories = 2;
@@ -19,11 +19,12 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// leaves room for cream if true
         /// </summary>
-        public bool _roomForCream = false;
+        public bool roomForCream = false;
         /// <summary>
         /// Makes the drink decaf
         /// </summary>
-        public bool _decaf = false;
+        public bool decaf = false;
+        public bool Decaf { get { return decaf; } set { decaf = value; } }
         /// <summary>
         /// Returns the ingredients that comprise the beverage
         /// </summary>
@@ -71,14 +72,38 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Makes room for cream
         /// </summary>
-        public void RoomForCream() => _roomForCream = true;
+        public void RoomForCream() => roomForCream = true;
         /// <summary>
         /// Makes the drink decalf
         /// </summary>
-        public void MakeDecaf() => _decaf = true;
+        public void MakeDecaf() => decaf = true;
         /// <summary>
         /// Adds Ice
         /// </summary>
         public void AddIce() => Ice = true;
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            switch (size)
+            {
+                case Size.Large:
+                    sb.Append("Large ");
+                    break;
+                case Size.Medium:
+                    sb.Append("Medium ");
+                    break;
+                case Size.Small:
+                    sb.Append("Small ");
+                    break;
+                default:
+                    break;
+            }
+
+            if (Decaf == true)
+                sb.Append("Decaf ");
+            sb.Append("Jurassic Java");
+            return sb.ToString();
+        }
     }
 }

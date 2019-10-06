@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class SteakosaurusBurger : Entree
     {
@@ -106,6 +106,9 @@ namespace DinoDiner.Menu.Entrees
         {
             getTomato = false;
         }
-
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using System.Text;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 namespace MenuTest.Drinks
 {

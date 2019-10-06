@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu;
 
 
 
@@ -11,7 +9,7 @@ using DinoDiner.Menu.Sides;
 namespace DinoDiner.Menu
 {
     
-    public class CretaceousCombo
+    public class CretaceousCombo: IMenuItem
     {
         /// <summary>
         /// 
@@ -34,7 +32,7 @@ namespace DinoDiner.Menu
             {
                 _size = value;
                 Drink.Size = Drink.Size;
-                Side.Size = Side.Si;
+                Side.Size = Side.Size;
             }
         }
         /// <summary>
@@ -78,7 +76,7 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
-            Side = new Fryceritops();
+            Side = new Friceritops();
             Drink = new Sodasaurus();
         }
         /// <summary>
@@ -87,7 +85,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"";
+            return (Entree.ToString() + " Combo");
         }
     }
 }

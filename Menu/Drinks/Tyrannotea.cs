@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class Tyrannotea : Drink
     {
@@ -23,6 +23,7 @@ namespace DinoDiner.Menu.Drinks
         /// Controls if there are any added sweeteners
         /// </summary>
         public bool sweetened = false;
+        public bool Sweet { get { return sweetened; } set { sweetened = value; } }
         /// <summary>
         /// Returns the ingredients that comprise the beverage
         /// </summary>
@@ -90,6 +91,30 @@ namespace DinoDiner.Menu.Drinks
                     Calories = 16;
                     break;
             }
+        }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            switch (size)
+            {
+                case Size.Large:
+                    sb.Append("Large ");
+                    break;
+                case Size.Medium:
+                    sb.Append("Medium ");
+                    break;
+                case Size.Small:
+                    sb.Append("Small ");
+                    break;
+                default:
+                    break;
+            }
+
+            if (Sweet == true)
+                sb.Append("Sweet ");
+            sb.Append("Tyrannotea");
+            return sb.ToString();
         }
     }
 }

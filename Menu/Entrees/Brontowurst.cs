@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class Brontowurst : Entree
     {
@@ -55,6 +55,9 @@ namespace DinoDiner.Menu.Entrees
         {
             _onions = false;
         }
-
+        public override string ToString()
+        {
+            return "Brontowurst";
+        }
     }
 }

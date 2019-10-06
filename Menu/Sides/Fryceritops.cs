@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    public class Friceritops : Side
     {
         /// <summary>
         /// Creates a new instance of MeteorMacAndCheese as a small side
         /// </summary>
-        public Fryceritops()
+        public Friceritops()
         {
             Size = Size.Small;
         }
@@ -17,7 +17,7 @@ namespace DinoDiner.Menu.Sides
         /// Generates a list of the ingredients in a MMC
         /// </summary>
         public override List<string> Ingredients { get { return new List<string>() { "Potato", "Salt", "Vegetable Oil" }; } }
-        protected Size _size;
+        protected Size size;
         /// <summary>
         /// Sets the size of the selected side and updates the Calories and Price accordingly
         /// </summary>
@@ -25,8 +25,8 @@ namespace DinoDiner.Menu.Sides
         {
             set
             {
-                _size = value;
-                switch (_size)
+                size = value;
+                switch (size)
                 {
                     case Size.Large:
                         Calories = 480;
@@ -42,7 +42,29 @@ namespace DinoDiner.Menu.Sides
                         break;
                 }
             }
-            get { return _size; }
+            get { return size; }
         }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            
+            switch (size)
+            {
+                case Size.Large:
+                    sb.Append("Large ");
+                    break;
+                case Size.Medium:
+                    sb.Append("Medium ");
+                    break;
+                case Size.Small:
+                    sb.Append("Small ");
+                    break;
+                default:
+                    break;
+            }
+            sb.Append("Friceritops");
+            return sb.ToString();
+        }
+
     }
 }
