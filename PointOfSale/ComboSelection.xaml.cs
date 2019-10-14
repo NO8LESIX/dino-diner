@@ -24,5 +24,34 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        public void BWCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void DNCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void PPBJCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void PWCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void SBCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void TRKCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
+        public void VWCombo(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("CustomizeCombo.xaml", UriKind.Relative));
+        }
     }
 }

@@ -9,25 +9,41 @@
       Title="SideSelection">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="140"></ColumnDefinition>
-            <ColumnDefinition Width="140"></ColumnDefinition>
-            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="30">  </RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Side" Background="White" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
-        <Button Content="Fryceritops" Grid.Row="1" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Meteor Mac &amp; Cheese" Grid.Row="2" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Mezzorella Sticks" Grid.Row="3" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Triceritots" Grid.Row="4" Grid.Column="0" Click="OnSelection"></Button>
-        <TextBlock Text="Size" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
-        <Button Content="Small" Grid.Row="1" Grid.Column="1" Click="OnSelection"></Button>
-        <Button Content="Medium" Grid.Row="2" Grid.Column="1" Click="OnSelection"></Button>
-        <Button Content="Large" Grid.Row="3" Grid.Column="1" Click="OnSelection"></Button>
+        <TextBlock Text="Side"  TextBlock.FontSize="20" Background="White" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+        <Button Content="Fryceritops" Margin="10" Grid.Row="1" Background="White" TextBlock.FontSize="20" Grid.Column="0" Click="Button_Click_3">
+            
+        </Button>
+        <Button Content="Meteor Mac &amp; Cheese" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="2" Grid.Column="0" Click="Button_Click_4">
+            
+        </Button>
+        <Button Content="Mezzorella Sticks" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="3" Grid.Column="0" Click="Button_Click_5">
+            
+        </Button>
+        <Button Content="Triceritots" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="4" Grid.Column="0" Click="Button_Click_6">
+            
+        </Button>
+        <TextBlock Text="Size" TextBlock.FontSize="20" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+            
+        </TextBlock>
+        <Button Content="Small" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="1" Grid.Column="1" Click="Button_Click_2">
+            
+        </Button>
+        <Button Content="Medium" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="2" Grid.Column="1" Click="Button_Click_1">
+            
+        </Button>
+        <Button Content="Large" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="3" Grid.Column="1" Click="SelectLarge">
+            
+        </Button>
     </Grid>
 </Page>

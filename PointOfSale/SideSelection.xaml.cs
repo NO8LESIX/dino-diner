@@ -24,5 +24,40 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        private void SelectLarge(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectMedium(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectSmall(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectMeteorMacAndCheese(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectMezzorellaSticks(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectTriceritots(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectFryceritops(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

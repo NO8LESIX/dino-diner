@@ -10,25 +10,42 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto">
-            </ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" >
-            </RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Click ="SelectCombo" Width ="200" Grid.Row="0" Grid.Column="0">
-            <Image Source="Pictures/DinoDiner-01.png" Width="140"></Image>
-
+        <TextBlock Grid.Row="0" Grid.Column="0" TextAlignment="Center" Background="White" Text="Combo" Height="30" Width="75" FontSize="20" ></TextBlock>
+        <Button Click ="SelectCombo" Width ="200" Height="200" Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Select Combo" Background="White"></TextBlock>
+            <Button.Background >
+                <ImageBrush ImageSource="Pictures\ComboMeal.png">
+                </ImageBrush>
+            </Button.Background>
         </Button>
-        <Button Grid.Row="0" Grid.Column="1">
-            Entrees
+        <TextBlock Grid.Row="0" Grid.Column="1" TextAlignment="Center" Background="White" Text="Entree" Height="30" Width="75" FontSize="20" ></TextBlock>
+        <Button Click ="SelectEntree" Width ="200" Height="200" Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Select Entree" Background="White"></TextBlock>
+            <Button.Background >
+                <ImageBrush ImageSource="Pictures\DinoDiner-06.png">
+                </ImageBrush>
+            </Button.Background>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0">
-            Drinks
+        <Button Click ="SelectSide" Width ="200" Height="200" Grid.Row="1" Grid.Column="0">
+            <TextBlock Text="Select Side" Background="White"></TextBlock>
+            <Button.Background >
+                <ImageBrush ImageSource="Pictures\DinoDiner-08.png">
+                </ImageBrush>
+            </Button.Background>
         </Button>
-        <Button Grid.Row="1" Grid.Column="1">
-            Sides
+        <Button Click ="SelectDrink" Width ="200" Height="200" Grid.Row="1" Grid.Column="1">
+            <TextBlock Text="Select Drink" Background="White"></TextBlock>
+            <Button.Background >
+                <ImageBrush ImageSource="Pictures\DinoDiner-14.png">
+                </ImageBrush>
+            </Button.Background>
         </Button>
 
     </Grid>

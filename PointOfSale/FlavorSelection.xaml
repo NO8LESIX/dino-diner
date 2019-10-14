@@ -10,26 +10,26 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="140"></ColumnDefinition>
-            <ColumnDefinition Width="140"></ColumnDefinition>
-            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="140"></RowDefinition>
-            <RowDefinition Height="140"></RowDefinition>
-            <RowDefinition Height="140"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Flavor" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Flavor" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
 
-        <Button Content="Cherry" Grid.Row="1" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Chocolate" Grid.Row="1" Grid.Column="1" Click="OnSelection"></Button>
-        <Button Content="Cola" Grid.Row="1" Grid.Column="2" Click="OnSelection"></Button>
-        <Button Content="Lime" Grid.Row="2" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Orange" Grid.Row="2" Grid.Column="1" Click="OnSelection"></Button>
-        <Button Content="Root Beer" Grid.Row="2" Grid.Column="2" Click="OnSelection"></Button>
-        <Button Content="Vanila" Grid.Row="3" Grid.Column="0" Click="OnSelection"></Button>
-        <Button Content="Little-Bit-o-Eryt'n" Grid.Row="3" Grid.Column="1" Click="OnSelection"></Button>
+        <Button Content="Cherry" Margin="20" Grid.Row="1" Grid.Column="0" ></Button>
+        <Button Content="Chocolate" Margin="20" Grid.Row="1" Grid.Column="1" ></Button>
+        <Button Content="Cola" Margin="20" Grid.Row="1" Grid.Column="2" ></Button>
+        <Button Content="Lime" Margin="20" Grid.Row="2" Grid.Column="0" ></Button>
+        <Button Content="Orange" Margin="20" Grid.Row="2" Grid.Column="1" ></Button>
+        <Button Content="Root Beer" Margin="20" Grid.Row="2" Grid.Column="2" ></Button>
+        <Button Content="Vanila" Margin="20" Grid.Row="3" Grid.Column="0" ></Button>
+        <Button Content="Little-Bit-o-Eryt'n" Margin="20" Grid.Row="3" Grid.Column="1" ></Button>
     </Grid>
     
 </Page>
