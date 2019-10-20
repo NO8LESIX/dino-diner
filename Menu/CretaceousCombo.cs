@@ -8,8 +8,8 @@ using DinoDiner.Menu;
 
 namespace DinoDiner.Menu
 {
-    
-    public class CretaceousCombo: IMenuItem
+
+    public class CretaceousCombo : IMenuItem
     {
         /// <summary>
         /// 
@@ -87,5 +87,30 @@ namespace DinoDiner.Menu
         {
             return (Entree.ToString() + " Combo");
         }
+
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                specials.Add(Entree.ToString());
+                //specials.AddRange(Entree.Special);
+                specials.Add(Side.ToString());
+                //specials.AddRange(Side.Special);
+                specials.Add(Drink.ToString());
+                //specials.AddRange(Drink.ToString());
+                return specials.ToArray();
+            }
+        }
+
     }
 }

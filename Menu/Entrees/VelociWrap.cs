@@ -9,9 +9,9 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Variable to manage the occurances of ingredients in a meal
         /// </summary>
-        private bool _dressing = true;
-        private bool _lettuce = true;
-        private bool _cheese = true;
+        private bool dressing = true;
+        private bool lettuce = true;
+        private bool cheese = true;
         /// <summary>
         /// Generates a list of the ingredients in a VelociWrap meal
         /// </summary>
@@ -21,9 +21,9 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>()
                 {"Flour Tortilla", "Chicken Breast" };
-                if (_dressing) ingredients.Add("Ceasar Dressing");
-                if (_lettuce) ingredients.Add("Romaine Lettuce");
-                if (_cheese) ingredients.Add("Parmesan Cheese");
+                if (dressing) ingredients.Add("Ceasar Dressing");
+                if (lettuce) ingredients.Add("Romaine Lettuce");
+                if (cheese) ingredients.Add("Parmesan Cheese");
                 return ingredients;
             }
         }
@@ -40,26 +40,37 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldDressing()
         {
-            _dressing = false;
+            dressing = false;
         }
         /// <summary>
         /// Method used to remove lettuce from the meal
         /// </summary>
         public void HoldLettuce()
         {
-            _lettuce = false;
+            lettuce = false;
         }
         /// <summary>
         /// Method used to remove cheese from the meal
         /// </summary>
         public void HoldCheese()
         {
-            _cheese = false;
+            cheese = false;
         }
         public override string ToString()
         {
             return "Veloci-Wrap";
         }
-
+        public override string Description { get { return this.ToString(); } }
+        public override string[] Special 
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!cheese) specials.Add("Hold Cheese");
+                if (!dressing) specials.Add("Hold Dressing");
+                if (!lettuce) specials.Add("Hold Lettuce");
+                return specials.ToArray();
+            }
+        }
     }
 }

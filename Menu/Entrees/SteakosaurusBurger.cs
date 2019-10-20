@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Accessor used to control buns in the meal
         /// </summary>
-        public bool getBun { get;  set; } = true;
+        public bool getBun { get; set; } = true;
         /// <summary>
         /// Accessor used to control pickles in the meal
         /// </summary>
@@ -109,6 +109,19 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Steakosaurus Burger";
+        }
+        public override string Description { get { return this.ToString(); } }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!getBun) specials.Add("Hold Whole Wheat Bun");
+                if (!getKetchup) specials.Add("Hold Ketchup");
+                if (!getMustard) specials.Add("Hold Mustard");
+                if (!getPickle) specials.Add("Hold Pickle");
+                return specials.ToArray();
+            }
         }
     }
 }

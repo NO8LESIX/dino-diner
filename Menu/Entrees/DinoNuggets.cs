@@ -46,5 +46,7 @@ namespace DinoDiner.Menu
         {
             return "Dino-Nuggets";
         }
+        public override string Description { get { return this.ToString(); } }
+        public override string[] Special { get; }
     }
 }

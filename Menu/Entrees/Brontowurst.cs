@@ -9,9 +9,9 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Private variables used to determine the ingredients to add into the meal
         /// </summary>
-        private bool _bun = true;
-        private bool _peppers = true;
-        private bool _onions = true;
+        private bool bun = true;
+        private bool peppers = true;
+        private bool onions = true;
         /// <summary>
         /// Generates a list of the ingredients in a Brontowurst meal
         /// </summary>
@@ -20,9 +20,9 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (_bun) ingredients.Add("Whole Wheat Bun");
-                if (_peppers) ingredients.Add("Peppers");
-                if (_onions) ingredients.Add("Onion");
+                if (bun) ingredients.Add("Whole Wheat Bun");
+                if (peppers) ingredients.Add("Peppers");
+                if (onions) ingredients.Add("Onion");
                 return ingredients;
             }
         }
@@ -39,25 +39,38 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
-            _bun = false;
+            bun = false;
         }
         /// <summary>
         /// Method used to remove peppers in the meal
         /// </summary>
         public void HoldPeppers()
         {
-            _peppers = false;
+            peppers = false;
         }
         /// <summary>
         /// Method used to remove onion from the meal
         /// </summary>
         public void HoldOnion()
         {
-            _onions = false;
+            onions = false;
         }
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        public override string Description { get { return this.ToString(); } }
+        public override string[] Special 
+        {
+           get
+            {
+                List<string> specials = new List<string>();
+                if (!bun) specials.Add("Hold Whole Wheat Bun");
+                if (!peppers) specials.Add("Hold Peppers");
+                if (!onions) specials.Add("Hold Onion");
+                return specials.ToArray();
+            } 
         }
     }
 }

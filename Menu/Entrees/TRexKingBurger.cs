@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Variable to manage the occurance of mayo in a meal
         /// </summary>
-        private bool _mayo = true;
+        private bool mayo = true;
         /// <summary>
         /// Generates a list of the ingredients in a TRexKingBurger meal
         /// </summary>
@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
                 if (getLettuce) ingredients.Add("Lettuce");
                 if (getTomato) ingredients.Add("Tomato");
                 if (getOnion) ingredients.Add("Onion");
-                if (_mayo) ingredients.Add("Mayo");
+                if (mayo) ingredients.Add("Mayo");
                 return ingredients;
             }
         }
@@ -43,12 +43,26 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMayo()
         {
-            _mayo = false;
+            mayo = false;
         }
         public override string ToString()
         {
             return "T-Rex King Burger";
         }
-
+        public override string Description { get { return this.ToString(); } }
+        public override string[] Special {
+            get {
+                List<string> specials = new List<string>();
+                if (!getBun) specials.Add("Hold Whole Wheat Bun");
+                if (!mayo) specials.Add("Hold Mayo");
+                if (!getKetchup) specials.Add("Hold Ketchup");
+                if (!getLettuce) specials.Add("Hold Lettuce");
+                if (!getMustard) specials.Add("Hold Mustard");
+                if (!getOnion) specials.Add("Hold Onion");
+                if (!getPickle) specials.Add("Hold Pickle");
+                if (!getTomato) specials.Add("Hold Tomato");
+                return specials.ToArray();
+            }
+        }
     }
 }

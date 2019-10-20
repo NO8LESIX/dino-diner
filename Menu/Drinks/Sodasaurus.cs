@@ -105,5 +105,26 @@ namespace DinoDiner.Menu
             sb.Append("Sodasaurus");
             return sb.ToString();
         }
+
+
+        public string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        /// <summary>
+        /// Gets any specital preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!Ice) specials.Add("Hold Ice");
+                return specials.ToArray();
+            }
+        }
     }
 }
