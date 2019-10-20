@@ -7,8 +7,94 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DrinkSelection">
-
+    
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Column="2" Grid.Row="0" Width="210">
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Sweet/Decaf/Flavor" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Add Lemon" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Hold Ice" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+        </ListBox>
+
+
+        <ListBox Grid.Column="1" Grid.Row="0" Width="210">
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Small" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Medium" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="75" Width="150">
+                    <TextBlock Text="Large" Background="White"></TextBlock>
+                </Button>
+            </ListBoxItem>
+        </ListBox>
+
+        <ListBox Grid.Column="0" Grid.Row="0" Width="210">
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150">
+                    <TextBlock Text="Sodasaurus" Background="White"></TextBlock>
+                    <Button.Background >
+                        <ImageBrush ImageSource="Pictures\DinoDiner-14.png">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150">
+                    <TextBlock Text="Tyrannotea" Background="White"></TextBlock>
+                    <Button.Background >
+                        <ImageBrush ImageSource="Pictures\DinoDiner-13.png">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150">
+                    <TextBlock Text="Jurassic Java" Background="White"></TextBlock>
+                    <Button.Background >
+                        <ImageBrush ImageSource="Pictures\DinoDiner-12.png">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150">
+                    <TextBlock Text="Water" Background="White"></TextBlock>
+                    <Button.Background >
+                        <ImageBrush ImageSource="Pictures\DinoDiner-15.png">
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+            </ListBoxItem>
+
+        </ListBox>
+
     </Grid>
+
 </Page>

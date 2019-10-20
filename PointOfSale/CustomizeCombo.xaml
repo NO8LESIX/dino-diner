@@ -9,6 +9,79 @@
       Title="CustomizeCombo">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Margin="20" Grid.Row="1" Grid.Column="1" Click="DNCombo">
+                <TextBlock Text="Small" Background="White"></TextBlock>
+                <Button.Background >
+                    <ImageBrush ImageSource="Pictures\DinoDiner-02.png">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Margin="20" Grid.Row="1" Grid.Column="0" Click="DNCombo">
+                <TextBlock Text="Medium" Background="White"></TextBlock>
+                <Button.Background >
+                    <ImageBrush ImageSource="Pictures\DinoDiner-02.png">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Margin="20" Grid.Row="1" Grid.Column="2" Click="DNCombo">
+                <TextBlock Text="Large" Background="White"></TextBlock>
+                <Button.Background >
+                    <ImageBrush ImageSource="Pictures\DinoDiner-02.png">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Size" FontSize="30"  VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Background="White"></TextBlock>
+
+
+
+        </Grid>
         
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="200"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Button Margin="20" Grid.Row="1" Grid.Column="1" Click="DNCombo">
+                <TextBlock Text="Sodasaurus" Background="White" FontSize="20"></TextBlock>
+                <Button.Background >
+                    <ImageBrush ImageSource="Pictures\DinoDiner-02.png">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button Margin="20" Grid.Row="1" Grid.Column="0" Click="DNCombo">
+                <TextBlock Text="Friceritops" Background="White" FontSize="20"></TextBlock>
+                <Button.Background >
+                    <ImageBrush ImageSource="Pictures\DinoDiner-02.png">
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Side" FontSize="30"  VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Background="White"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Drink" TextAlignment="Center" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"></TextBlock>
+
+        </Grid>
     </Grid>
 </Page>
