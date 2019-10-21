@@ -12,13 +12,15 @@ namespace MenuTest
         public void CorrectTotalCost()
         {
             Order od = new Order();
-            Assert.Equal(0.00, od.TotalCost, 2);
+            od.Items.Add(new Water());
+            Assert.Equal(0.10, od.TotalCost, 2);
         }
         [Fact]
         public void CorrectSubTotalCost()
         {
             Order od = new Order();
-            Assert.Equal(0.00, od.SubtotalCost, 2);
+            od.Items.Add(new Water());
+            Assert.Equal(0.10, od.TotalCost, 2);
         }
     }
 }

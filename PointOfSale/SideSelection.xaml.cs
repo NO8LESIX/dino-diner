@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -57,6 +58,18 @@ namespace PointOfSale
 
         private void SelectFryceritops(object sender, RoutedEventArgs e)
         {
+            Order order = (Order) DataContext;
+            order.Items.Add(new Friceritops());
+
+            LargeButton.IsEnabled = true;
+            MediumButton.IsEnabled = true;
+            SmallButton.IsEnabled = true;
+            Triceritots.IsEnabled = false;
+            MezzorellaSticks.IsEnabled = false;
+            MeteorMacAndCheese.IsEnabled = false;
+
+
+
 
         }
     }

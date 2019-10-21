@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for DrinkSelection.xaml
+    /// Interaction logic for OrderControl.xaml
     /// </summary>
-    public partial class DrinkSelection : Page
+    public partial class OrderControl : UserControl
     {
-        public DrinkSelection()
+        public OrderControl()
         {
             InitializeComponent();
-        }
-
-        private void SelectFlavor(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("FlavorSelection.xaml", UriKind.Relative));
         }
     }
 }

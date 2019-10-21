@@ -20,7 +20,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Flavor" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Flavor" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
 
         <Button Content="Cherry" Margin="20" Grid.Row="1" Grid.Column="0" ></Button>
         <Button Content="Chocolate" Margin="20" Grid.Row="1" Grid.Column="1" ></Button>

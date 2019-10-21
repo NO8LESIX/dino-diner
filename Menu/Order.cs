@@ -1,4 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -6,30 +9,19 @@ namespace DinoDiner.Menu
     {
         public Order()
         {
-            order = new ObservableCollection<IOrderItem>();
+            Items = new ObservableCollection<IOrderItem>();
         }
 
         private double salesTaxRate = 0.00;
-        private ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
- /*       public ObservableCollection<IOrderItem> Order
-        {
-            get
-            {
-                return new ObservableCollection<IOrderItem>();
-            }
-            set
-            {
-                // IOrderItem order = value;
-                // order = new ObservableCollection<IOrderItem>();
-                order = new ObservableCollection<IOrderItem>(value);
-            }
-        }*/
+        //ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
+        public ObservableCollection<IOrderItem> Items { get; set; } 
+
         public double SubtotalCost
         {
             get
             {
                 double sc = 0.00;
-                foreach (IOrderItem item in order)
+                foreach (IOrderItem item in Items)
                 {
                     sc += item.Price;
                 }

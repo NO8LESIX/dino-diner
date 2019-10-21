@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -24,7 +25,43 @@ namespace PointOfSale
         {
             InitializeComponent();
 
+            Order order = new Order();
+            //order.Items.Add(new Friceritops);
+            //order.Items.Add(new Tyrannotea);
 
+            //OrderList list = new OrderList(order);
+
+            //OrderInterface interface = new OrderInterface(order);
+            // DockPanel dock = new DockPanel();
+
+            // OrderList.DataContext = order;
+            //OrderInterface.DataContext = order;
+
+
+
+
+        }
+
+        private void OrderList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public void OnLoadCompleted(object sender, RoutedEventArgs e)
+        {
+            SetFrameDataContext();
+        }
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            SetFrameDataContext();
+        }
+        public void SetFrameDataContext()
+        {
+            FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            if (content == null)
+            {
+                return;
+            }
+            content.DataContext = OrderInterface.DataContext;
         }
     }
 }

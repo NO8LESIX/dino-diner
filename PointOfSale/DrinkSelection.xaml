@@ -57,7 +57,7 @@
 
         <ListBox Grid.Column="0" Grid.Row="0" Width="210">
             <ListBoxItem>
-                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150">
+                <Button Margin="20" Grid.Row="0" Grid.Column="0" Height="60" Width="150" Click="SelectFlavor">
                     <TextBlock Text="Sodasaurus" Background="White"></TextBlock>
                     <Button.Background >
                         <ImageBrush ImageSource="Pictures\DinoDiner-14.png">
