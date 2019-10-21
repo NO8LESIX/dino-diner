@@ -74,7 +74,7 @@ namespace MenuTest
         {
             Friceritops ft = new Friceritops();
             ft.Size = size;
-            Assert.Equal($"{size} Fryceritops", ft.ToString());
+            Assert.Equal($" {size} Fryceritops", ft.ToString());
         }
 
         [Theory]

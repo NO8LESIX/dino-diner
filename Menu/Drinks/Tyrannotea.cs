@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     public class Tyrannotea : Drink
@@ -56,14 +56,23 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         Calories = 32;
                         Price = 1.99;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Medium:
                         Calories = 16;
                         Price = 1.49;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Small:
                         Calories = 8;
                         Price = 0.99;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                 }
             }
@@ -72,7 +81,13 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Method to add lemon to the drink
         /// </summary>
-        public void AddLemon() => lemon = true;
+        public void AddLemon()
+        {
+            lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
+        }
         /// <summary>
         /// Method to add sugar to the drink
         /// </summary>
@@ -83,12 +98,24 @@ namespace DinoDiner.Menu
             {
                 case Size.Large:
                     Calories = 64;
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Description");
+                    NotifyOfPropertyChange("Ingredients");
+                    NotifyOfPropertyChange("Calories");
                     break;
                 case Size.Medium:
                     Calories = 32;
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Description");
+                    NotifyOfPropertyChange("Ingredients");
+                    NotifyOfPropertyChange("Calories");
                     break;
                 case Size.Small:
                     Calories = 16;
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Description");
+                    NotifyOfPropertyChange("Ingredients");
+                    NotifyOfPropertyChange("Calories");
                     break;
             }
         }
@@ -115,6 +142,39 @@ namespace DinoDiner.Menu
                 sb.Append("Sweet ");
             sb.Append("Tyrannotea");
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Gets and sets the description of the ingredients
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+        /// <summary>
+        /// Gets any specital preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (lemon) specials.Add("Lemon");
+                if (!Ice) specials.Add("Hold Ice");
+                return specials.ToArray();
+            }
+        }
+        /// <summary>
+        /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -8,13 +8,14 @@ namespace MenuTest.Drinks
 {
     public class WaterTest
     {
+        [Fact]
         public void ShouldHaveCorrectDefaults()
         {
             Water water = new Water();
             Assert.Equal(.1, water.Price);
             Assert.True(water.Calories == 0);
             Assert.True(water.Ice == true);
-            Assert.True(water._lemon == false);
+            Assert.True(water.lemon == false);
         }
         [Fact]
         public void ShouldHaveCorrectValuesForMedium()
@@ -24,7 +25,7 @@ namespace MenuTest.Drinks
             Assert.Equal(.1, water.Price);
             Assert.True(water.Calories == 0);
             Assert.True(water.Ice == true);
-            Assert.True(water._lemon == false);
+            Assert.True(water.lemon == false);
         }
         [Fact]
         public void ShouldHaveCorrectValuesForLarge()
@@ -34,7 +35,7 @@ namespace MenuTest.Drinks
             Assert.Equal(.1, water.Price);
             Assert.True(water.Calories == 0);
             Assert.True(water.Ice == true);
-            Assert.True(water._lemon == false);
+            Assert.True(water.lemon == false);
         }
         [Fact]
         public void HoldsIce()
@@ -48,7 +49,7 @@ namespace MenuTest.Drinks
         {
             Water water = new Water();
             water.AddLemon();
-            Assert.True(water._lemon == true);
+            Assert.True(water.lemon == true);
         }
         [Fact]
         public void ShouldHaveCorrectIngredients()
@@ -57,7 +58,7 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water", water.Ingredients);
 
             water.AddLemon();
-            Assert.True(water._lemon == true);
+            Assert.True(water.lemon == true);
             Assert.Contains<string>("Water", water.Ingredients);
             Assert.Contains<string>("Lemon", water.Ingredients);
             Assert.Equal<int>(2, water.Ingredients.Count);

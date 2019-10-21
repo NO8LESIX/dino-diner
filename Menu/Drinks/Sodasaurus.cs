@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     /// <summary>
@@ -13,6 +13,11 @@ namespace DinoDiner.Menu
     }
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// Gets and Set the natural flavour of the drink
+        /// </summary>
+        public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
+        protected Size size;
         /// <summary>
         /// Creates a new instance of MeteorMacAndCheese as a small side
         /// </summary>
@@ -26,11 +31,7 @@ namespace DinoDiner.Menu
         /// Returns the ingredients that comprise the beverage
         /// </summary>
         public override List<string> Ingredients { get { return new List<string>() { "Water", "Natural Flavors", "Cane Sugar" }; } }
-        /// <summary>
-        /// Gets and Set the natural flavour of the drink
-        /// </summary>
-        public SodasaurusFlavor Flavor { get; set; } = SodasaurusFlavor.Cola;
-        protected Size size;
+
         /// <summary>
         /// Sets the size of the selected side and updates the Calories and Price accordingly
         /// </summary>
@@ -44,19 +45,32 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         Calories = 208;
                         Price = 2.50;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Medium:
                         Calories = 156;
                         Price = 2.00;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                     case Size.Small:
                         Calories = 112;
                         Price = 1.50;
+                        NotifyOfPropertyChange("Description");
+                        NotifyOfPropertyChange("Price");
+                        NotifyOfPropertyChange("Calories");
                         break;
                 }
             }
             get { return size; }
         }
+        /// <summary>
+        /// Returns the description of the item
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -105,9 +119,10 @@ namespace DinoDiner.Menu
             sb.Append("Sodasaurus");
             return sb.ToString();
         }
-
-
-        public string Description
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string Description
         {
             get
             {
@@ -117,7 +132,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any specital preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -125,6 +140,15 @@ namespace DinoDiner.Menu
                 if (!Ice) specials.Add("Hold Ice");
                 return specials.ToArray();
             }
+        }
+        /// <summary>
+        /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

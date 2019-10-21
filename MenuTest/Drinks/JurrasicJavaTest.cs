@@ -8,6 +8,7 @@ namespace MenuTest.Drinks
 {
     public class JurrasicJavaTest
     {
+        [Fact]
         public void ShouldHaveCorrectDefaults()
         {
             JurassicJava java = new JurassicJava();

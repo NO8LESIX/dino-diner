@@ -7,6 +7,7 @@ namespace MenuTest.Drinks
 {
     public class TyrannoteaTest
     {
+        [Fact]
         public void ShouldHaveCorrectDefaults()
         {
             Tyrannotea tea = new Tyrannotea();

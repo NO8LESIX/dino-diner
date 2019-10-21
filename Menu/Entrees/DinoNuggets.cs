@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -41,12 +40,34 @@ namespace DinoDiner.Menu
             chickenNugget++;
             Price = 4.25 + (chickenNugget * 0.25);
             Calories = (6 * 59) + (chickenNugget * 59);
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Price");
+            NotifyOfPropertyChange("Calories");
         }
         public override string ToString()
         {
             return "Dino-Nuggets";
         }
         public override string Description { get { return this.ToString(); } }
-        public override string[] Special { get; }
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (chickenNugget > 0) specials.Add((chickenNugget).ToString() + " Extra Nuggets");
+                return specials.ToArray();
+            }
+        }
+        /// <summary>
+        /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

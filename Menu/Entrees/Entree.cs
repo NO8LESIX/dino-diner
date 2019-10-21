@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Controls inherited valuse for the entrees
     /// </summary>
-    public abstract class Entree : IMenuItem, IOrderItem
+    public abstract class Entree : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -25,5 +26,7 @@ namespace DinoDiner.Menu
         public abstract List<string> Ingredients { get; }
         public abstract string Description { get; }
         public abstract string[] Special { get; }
+
+        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu;
 
@@ -9,7 +10,7 @@ using DinoDiner.Menu;
 namespace DinoDiner.Menu
 {
 
-    public class CretaceousCombo : IMenuItem
+    public class CretaceousCombo : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// 
@@ -25,6 +26,9 @@ namespace DinoDiner.Menu
         public Side Side { get; set; }
 
         private Size _size = Size.Small;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public Size size
         {
             get { return _size; }
@@ -102,12 +106,11 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> specials = new List<string>();
-                specials.Add(Entree.ToString());
-                //specials.AddRange(Entree.Special);
-                specials.Add(Side.ToString());
-                //specials.AddRange(Side.Special);
-                specials.Add(Drink.ToString());
-                //specials.AddRange(Drink.ToString());
+                specials.AddRange(Entree.Special);
+                specials.Add(Side.Description);
+                specials.AddRange(Side.Special);
+                specials.Add(Drink.Description);
+                specials.AddRange(Drink.Special);
                 return specials.ToArray();
             }
         }

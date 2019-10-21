@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -40,6 +41,9 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Method used to remove peppers in the meal
@@ -47,6 +51,9 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             peppers = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Method used to remove onion from the meal
@@ -54,6 +61,9 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             onions = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
         }
         public override string ToString()
         {
@@ -71,6 +81,15 @@ namespace DinoDiner.Menu
                 if (!onions) specials.Add("Hold Onion");
                 return specials.ToArray();
             } 
+        }
+        /// <summary>
+        /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

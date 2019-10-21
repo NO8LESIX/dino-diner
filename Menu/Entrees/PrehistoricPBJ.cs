@@ -37,9 +37,9 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyOfPropertyChange(string propertyName) 
+        private void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

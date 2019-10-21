@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -44,6 +45,9 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             mayo = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Description");
+            NotifyOfPropertyChange("Ingredients");
         }
         public override string ToString()
         {
@@ -63,6 +67,15 @@ namespace DinoDiner.Menu
                 if (!getTomato) specials.Add("Hold Tomato");
                 return specials.ToArray();
             }
+        }
+        /// <summary>
+        /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

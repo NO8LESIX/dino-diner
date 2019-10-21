@@ -90,7 +90,7 @@ namespace MenuTest.Entrees
             pbj.HoldJelly();
 
             Assert.Collection<string>(pbj.Special,
-                item => { Assert.Equal("Hold Jelly", item); },
+                item => { Assert.Equal("Hold Peanut Butter", item); },
                 item => { Assert.Equal("Hold Jelly", item); }
                 );
         }

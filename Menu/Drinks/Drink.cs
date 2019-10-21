@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
 
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -23,7 +24,9 @@ namespace DinoDiner.Menu
         /// Returns the ingredients that comprise the beverage
         /// </summary>
         public abstract List<string> Ingredients { get; }
-        
+
+        public abstract event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Removes Ice from the drink
         /// </summary>
@@ -32,5 +35,7 @@ namespace DinoDiner.Menu
         /// 
         /// </summary>
         public abstract Size Size { get; set; }
+        public abstract string Description { get; }
+        public abstract string[] Special { get; }
     }
 }
