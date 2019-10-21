@@ -4,30 +4,45 @@ namespace DinoDiner.Menu
 {
     public class Order
     {
+        public Order()
+        {
+            order = new ObservableCollection<IOrderItem>();
+        }
+
         private double salesTaxRate = 0.00;
         private ObservableCollection<IOrderItem> order = new ObservableCollection<IOrderItem>();
-        ObservableCollection<IOrderItem> Orders
+ /*       public ObservableCollection<IOrderItem> Order
         {
-            get { return order; }
-            set { order = value; }
-        }
+            get
+            {
+                return new ObservableCollection<IOrderItem>();
+            }
+            set
+            {
+                // IOrderItem order = value;
+                // order = new ObservableCollection<IOrderItem>();
+                order = new ObservableCollection<IOrderItem>(value);
+            }
+        }*/
         public double SubtotalCost
         {
             get
             {
                 double sc = 0.00;
-                foreach (IOrderItem item in Orders)
+                foreach (IOrderItem item in order)
                 {
                     sc += item.Price;
                 }
                 if (SubtotalCost < 0)
+                {
                     return 0.00;
+                }
+
                 return sc;
             }
         }
         public double SalesTaxRate { get { return salesTaxRate; } private set { salesTaxRate = value; } }
         public double SalesTaxCost { get { return SubtotalCost * SalesTaxRate; } }
-        public double TotalCost { get { return (SubtotalCost + SalesTaxRate); } }
-
+        public double TotalCost { get { return (SubtotalCost + SalesTaxCost); } }
     }
 }
