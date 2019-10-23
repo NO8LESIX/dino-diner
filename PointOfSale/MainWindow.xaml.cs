@@ -24,8 +24,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-
-            Order order = new Order();
+            OrderList.NavigationService = OrderInterface.NavigationService;
             //order.Items.Add(new Friceritops);
             //order.Items.Add(new Tyrannotea);
 
@@ -36,10 +35,6 @@ namespace PointOfSale
 
             // OrderList.DataContext = order;
             //OrderInterface.DataContext = order;
-
-
-
-
         }
 
         private void OrderList_Loaded(object sender, RoutedEventArgs e)
@@ -62,6 +57,19 @@ namespace PointOfSale
                 return;
             }
             content.DataContext = OrderInterface.DataContext;
+        }
+
+        private void BindDataContextToPage()
+        {
+            if (OrderInterface.Content is FrameworkElement element)
+            {
+                element.DataContext = OrderInterface.DataContext;
+            }
+        }
+
+        private void OnLoadCompleted(object sender, NavigationEventArgs e)
+        {
+            BindDataContextToPage();
         }
     }
 }

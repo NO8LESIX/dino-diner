@@ -20,30 +20,90 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Text="Side"  TextBlock.FontSize="20" Background="White" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
-        <Button Name="Friceritops" Content="Fryceritops" Margin="10" Grid.Row="1" Background="White" TextBlock.FontSize="20" Grid.Column="0" Click="SelectFryceritops">
+        <TextBlock Text="Side" 
+                   TextBlock.FontSize="20" 
+                   Background="White" 
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   HorizontalAlignment="Center">            
+        </TextBlock>
+        <Button Name="Friceritops" 
+                Content="Fryceritops" 
+                Margin="10" 
+                Grid.Row="1" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Column="0" 
+                Click="SelectFryceritops">            
+        </Button>
+        <Button Name="MeteorMacAndCheese" 
+                Content="Meteor Mac &amp; Cheese" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Click="SelectMeteorMacAndCheese">
             
         </Button>
-        <Button Name="MeteorMacAndCheese" Content="Meteor Mac &amp; Cheese" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="2" Grid.Column="0" Click="SelectMeteorMacAndCheese">
+        <Button Name="MezzorellaSticks" 
+                Content="Mezzorella Sticks" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="3" 
+                Grid.Column="0" 
+                Click="SelectMezzorellaSticks">
             
         </Button>
-        <Button Name="MezzorellaSticks" Content="Mezzorella Sticks" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="3" Grid.Column="0" Click="SelectMezzorellaSticks">
+        <Button Name="Triceritots"  
+                Content="Triceritots" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="4" 
+                Grid.Column="0" 
+                Click="SelectTriceritots">
             
         </Button>
-        <Button Name="Triceritots"  Content="Triceritots" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="4" Grid.Column="0" Click="SelectTriceritots">
-            
-        </Button>
-        <TextBlock Text="Size" TextBlock.FontSize="20" Background="White" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+        <TextBlock Text="Size" 
+                   TextBlock.FontSize="20" 
+                   Background="White" 
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   HorizontalAlignment="Center">
             
         </TextBlock>
-        <Button Name="SmallButton" Content="Small" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="1" Grid.Column="1" Click="SelectSmall">
+        <Button Name="SmallButton" 
+                Content="Small" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Click="SelectSmall">
             
         </Button >
-        <Button Name="MediumButton" Content="Medium" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="2" Grid.Column="1" Click="SelectMedium">
+        <Button Name="MediumButton" 
+                Content="Medium" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                Click="SelectMedium">
             
         </Button>
-        <Button Name="LargeButton" Content="Large" Margin="10" Background="White" TextBlock.FontSize="20" Grid.Row="3" Grid.Column="1" Click="SelectLarge">
-            
+        <Button Name="LargeButton" 
+                Content="Large" 
+                Margin="10" 
+                Background="White" 
+                TextBlock.FontSize="20" 
+                Grid.Row="3" 
+                Grid.Column="1" 
+                Click="SelectLarge">
         </Button>
+        
+        
     </Grid>
 </Page>
