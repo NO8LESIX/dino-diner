@@ -91,5 +91,12 @@ namespace DinoDiner.Menu
         /// 
         /// </summary>
         public double TotalCost { get { return (SubtotalCost + SalesTaxCost); } }
+
+        public void Add(IOrderItem item)
+        {
+            item.PropertyChanged += OnCollectionChanged;
+            Items.Add(item);
+        }
+
     }
 }

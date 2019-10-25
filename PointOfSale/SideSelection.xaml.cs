@@ -24,7 +24,7 @@ namespace PointOfSale
         public Side Side { get; set; }
         private void SelectSide(Side side)
         {
-            if(side is )
+            //if(side is )
             if (DataContext is Order order)
             {
                 order.Items.Add(side);

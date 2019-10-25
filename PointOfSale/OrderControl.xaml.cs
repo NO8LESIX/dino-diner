@@ -50,7 +50,7 @@ namespace PointOfSale
         }
         private void OnRemovedItem(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
                 if (sender is FrameworkElement element)
                 {
