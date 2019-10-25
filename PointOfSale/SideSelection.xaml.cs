@@ -24,6 +24,7 @@ namespace PointOfSale
         public Side Side { get; set; }
         private void SelectSide(Side side)
         {
+            if(side is )
             if (DataContext is Order order)
             {
                 order.Items.Add(side);
@@ -31,7 +32,7 @@ namespace PointOfSale
             }
         }
         /// <summary>
-        /// 
+        /// Controls the size of the Side being added to the Order
         /// </summary>
         /// <param name="size"></param>
         private void SelectSize(DinoDiner.Menu.Size size)
