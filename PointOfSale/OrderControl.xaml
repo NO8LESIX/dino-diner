@@ -47,12 +47,33 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Vertical">
-                <TextBox Name="Subtotal" Text="{Binding Path=Subtotal}"/>
-                <TextBox Name ="SalesTax" Text="{Binding Path=TotalCost}"/>
-                <TextBox Name ="Total" Text="{Binding Path=TotalCost}"/>
+                <TextBlock Name="Subtotal" Text="{Binding Path=SubtotalCost}"/>
+                <TextBlock Name ="SalesTax" Text="{Binding Path=SalesTaxCost}"/>
+                <TextBlock Name ="Total" Text="{Binding Path=TotalCost}"/>
             </StackPanel>
         </Border>
-        <TextBox Text="Buttons go here" Grid.Row="3"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="CancelOrder" 
+                    Click="CancelOrder_Click"                    
+                    Background="IndianRed" 
+                    Foreground="White" 
+                    FontWeight="ExtraBold" 
+                    Grid.Column="0"
+                    />
+            <Button Name="FinishOrder"
+                    Click="FinishOrder_Click"
+                    Background="Green" 
+                    Foreground="White" 
+                    FontWeight="ExtraBold"
+                    Grid.Column="1"
+                    />
+
+        </Grid>
+
 
     </Grid>
 </UserControl>
