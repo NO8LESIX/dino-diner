@@ -30,7 +30,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="55"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=Description}"/>
+                            <TextBlock Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}"/>
                             <Button Click="OnRemovedItem" 
                                     Background="IndianRed" 
                                     Foreground="White"
@@ -39,7 +39,7 @@
                                 Remove
                             </Button>
                         </Grid>
-                        <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
+                        <ListBox ItemsSource="{Binding Path=Special, UpdateSourceTrigger=PropertyChanged}" BorderBrush="White"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -47,12 +47,19 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Vertical">
-                <TextBox Name="Subtotal" Text="{Binding Path=Subtotal}"/>
-                <TextBox Name ="SalesTax" Text="{Binding Path=TotalCost}"/>
-                <TextBox Name ="Total" Text="{Binding Path=TotalCost}"/>
+                <TextBox Name="Subtotal" Text="{Binding Path=Subtotal, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Name ="SalesTax" Text="{Binding Path=TotalCost, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Name ="Total" Text="{Binding Path=TotalCost, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
         </Border>
-        <TextBox Text="Buttons go here" Grid.Row="3"/>
-
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Name="CancelOrderButton" Background="IndianRed" BorderBrush="Black"/>
+                <Button Name="ConfirmOrderButton" Background="ForestGreen" BorderBrush="Black"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>
