@@ -97,6 +97,11 @@ namespace DinoDiner.Menu
             item.PropertyChanged += OnCollectionChanged;
             Items.Add(item);
         }
+        public void Remove(IOrderItem item)
+        {
+            item.PropertyChanged += OnCollectionChanged;
+            Items.Remove(item);
+        }
 
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Friceritops : Side
+    public class Fryceritops : Side
     {
         /// <summary>
         /// Generates a list of the ingredients in a MMC
@@ -14,7 +14,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Creates a new instance of MeteorMacAndCheese as a small side
         /// </summary>
-        public Friceritops()
+        public Fryceritops()
         {
             Size = Size.Small;
         }

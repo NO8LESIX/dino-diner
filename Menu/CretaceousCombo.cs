@@ -29,7 +29,7 @@ namespace DinoDiner.Menu
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Size size
+        public Size Size
         {
             get { return _size; }
             set
@@ -80,7 +80,7 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
-            Side = new Friceritops();
+            Side = new Fryceritops();
             Drink = new Sodasaurus();
         }
         /// <summary>

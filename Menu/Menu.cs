@@ -24,7 +24,7 @@ namespace DinoDiner.Menu
                 mi.Add(new TRexKingBurger());
                 mi.Add(new VelociWrap());
 
-                mi.Add(new Friceritops());
+                mi.Add(new Fryceritops());
                 mi.Add(new MeteorMacAndCheese());
                 mi.Add(new MezzorellaSticks());
                 mi.Add(new Triceritots());
@@ -70,7 +70,7 @@ namespace DinoDiner.Menu
                 mi.Add(new TRexKingBurger());
                 mi.Add(new VelociWrap());
 
-                mi.Add(new Friceritops());
+                mi.Add(new Fryceritops());
                 mi.Add(new MeteorMacAndCheese());
                 mi.Add(new MezzorellaSticks());
                 mi.Add(new Triceritots());
@@ -97,7 +97,7 @@ namespace DinoDiner.Menu
                 mi.Add(new TRexKingBurger());
                 mi.Add(new VelociWrap());
 
-                mi.Add(new Friceritops());
+                mi.Add(new Fryceritops());
                 mi.Add(new MeteorMacAndCheese());
                 mi.Add(new MezzorellaSticks());
                 mi.Add(new Triceritots());
@@ -137,7 +137,7 @@ namespace DinoDiner.Menu
             mi.Add(new TRexKingBurger());
             mi.Add(new VelociWrap());
 
-            mi.Add(new Friceritops());
+            mi.Add(new Fryceritops());
             mi.Add(new MeteorMacAndCheese());
             mi.Add(new MezzorellaSticks());
             mi.Add(new Triceritots());

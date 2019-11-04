@@ -85,7 +85,7 @@ namespace MenuTest
         [Fact]
         public void FriceritopsShouldUpdateComponents()
         {
-            Friceritops dr = new Friceritops();
+            Fryceritops dr = new Fryceritops();
             Assert.Equal(dr.Description, dr.ToString());
         }
         #endregion

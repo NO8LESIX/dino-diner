@@ -163,7 +163,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void SelectFryceritops(object sender, RoutedEventArgs e)
         {
-            SelectSide(new Friceritops());
+            SelectSide(new Fryceritops());
             LargeButton.Visibility = Visibility.Visible;
             MediumButton.Visibility = Visibility.Visible;
             SmallButton.Visibility = Visibility.Visible;

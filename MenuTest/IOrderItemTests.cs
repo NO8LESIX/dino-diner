@@ -162,7 +162,7 @@ namespace MenuTest
         [Fact]
         public void FriceritopsShouldHaveCorrectDescription()
         {
-            Friceritops dr = new Friceritops();
+            Fryceritops dr = new Fryceritops();
             Assert.Equal(dr.Description, dr.ToString());
         }
         [Fact]
@@ -183,7 +183,7 @@ namespace MenuTest
         [Fact]
         public void FriceritopsShouldHaveCorrectSpecial()
         {
-            Friceritops dr = new Friceritops();
+            Fryceritops dr = new Fryceritops();
         }
         #endregion
 
@@ -228,7 +228,7 @@ namespace MenuTest
         {
             JurassicJava dr = new JurassicJava();
             dr.AddIce();
-            dr.RoomForCream();
+            dr.LeaveRoomForCream();
             Assert.Collection<string>(dr.Special,
                 item => { Assert.Equal("Add Ice", item); },
                 item => { Assert.Equal("Leave Room For Cream", item); }

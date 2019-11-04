@@ -84,7 +84,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Makes room for cream
         /// </summary>
-        public void RoomForCream()
+        public void LeaveRoomForCream()
         {
             roomForCream = true;
             NotifyOfPropertyChange("Special");

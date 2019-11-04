@@ -63,7 +63,7 @@ namespace MenuTest.Drinks
         public void HasRoomForCream()
         {
             JurassicJava java = new JurassicJava();
-            java.RoomForCream();
+            java.LeaveRoomForCream();
             Assert.True(java.roomForCream == true);
         }
     }
