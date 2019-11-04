@@ -7,16 +7,12 @@ using System;
 
 namespace DinoDiner.Menu
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Order : INotifyPropertyChanged
     {
         /// <summary>
         /// Local control for the sales tax rate
         /// </summary>
         private double salesTaxRate = 0.00;
-        private ObservableCollection<IOrderItem> items = new ObservableCollection<IOrderItem>();
         /// <summary>
         /// The Property Changed event handler; notifies of changes to the Price, Description, and Special Properties.
         /// </summary>
@@ -26,35 +22,30 @@ namespace DinoDiner.Menu
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        private void AllPropertiesChanged()
+        private void OnCollectionChanged(object sender, EventArgs args)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
         /// <summary>
-        /// Method alerts to any changes made to the collection and informs of updates to prices
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs property)
-        {
-            AllPropertiesChanged();
-        }
-        /// <summary>
         /// Controls the items in the order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get { return items; } set { items.Add((IOrderItem)value); } }
+        public ObservableCollection<IOrderItem> Items { get; set; }
         /// <summary>
         /// Constuctor for a new Order
         /// </summary>
         public Order()
         {
-            Add(new SteakosaurusBurger());
+            Items = new ObservableCollection<IOrderItem>();
+            Items.CollectionChanged += OnCollectionChanged;
+
+            Items.Add(new SteakosaurusBurger());
+
+
         }
         /// <summary>
-        /// Accessor to calculate the Subtotal
+        /// Accessor for the 
         /// </summary>
         public double SubtotalCost
         {
@@ -64,6 +55,10 @@ namespace DinoDiner.Menu
                 foreach (IOrderItem item in Items)
                 {
                     sc += item.Price;
+                }
+                if (SubtotalCost < 0)
+                {
+                    return 0.00;
                 }
 
                 return sc;
@@ -76,6 +71,7 @@ namespace DinoDiner.Menu
         {
             get
             {
+
                 return salesTaxRate;
             }
             private set
@@ -84,6 +80,7 @@ namespace DinoDiner.Menu
                     return;
 
                 salesTaxRate = value;
+                Items.CollectionChanged += OnCollectionChanged;
             }
         }
         /// <summary>
@@ -97,20 +94,8 @@ namespace DinoDiner.Menu
 
         public void Add(IOrderItem item)
         {
+            item.PropertyChanged += OnCollectionChanged;
             Items.Add(item);
-            item.PropertyChanged += OnPropertyChanged;
-            AllPropertiesChanged();
-        }
-        public bool Remove(IOrderItem item)
-        {
-
-            bool removed = Items.Remove(item);
-            if (removed)
-            {
-                item.PropertyChanged += OnPropertyChanged;
-                AllPropertiesChanged();
-            }
-            return removed;
         }
 
     }

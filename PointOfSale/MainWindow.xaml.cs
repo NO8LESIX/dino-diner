@@ -26,6 +26,10 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        private void OrderList_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
         public void OnLoadCompleted(object sender, RoutedEventArgs e)
         {
             SetFrameDataContext();
@@ -55,15 +59,6 @@ namespace PointOfSale
         private void OnLoadCompleted(object sender, NavigationEventArgs e)
         {
             BindDataContextToPage();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (OrderUI.NavigationService.CanGoBack)
-                OrderUI.NavigationService.GoBack();
-            else {
-                OrderUI.NavigationService.Navigate(new MenuCategorySelection());
-            }
         }
     }
 }

@@ -81,7 +81,8 @@
                 TextBlock.FontSize="20" 
                 Grid.Row="1" 
                 Grid.Column="1" 
-                Click="SelectSmall">            
+                Click="SelectSmall">
+            
         </Button >
         <Button Name="MediumButton" 
                 Content="Medium" 
