@@ -1,7 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Welcome to the Dino-Diner!";
 }
 
-<h1>Hello World</h1>
+<link rel="stylesheet"
+      href="~/css/site.css" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="hero-image">
+        <div id="hero-text">
+            <h1>Welcome to the Future of Ancient Cooking</h1>
+            <img src="~/images/DinoDiner-32.png">
+            <div id="grid">
+                <a asp-page="/About">About Us</a>
+                <a asp-page="/DinoDinerMenu">Menu</a>
+                <a asp-page="/PrivacyPolicy">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
