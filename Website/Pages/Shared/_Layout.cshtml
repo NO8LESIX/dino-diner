@@ -13,12 +13,17 @@
     </environment>
 </head>
 <body>
-    
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; 2019 - DinoDiner</p>
+            <div id="grid">
+                <a asp-page="/About">About Us</a>
+                <a asp-page="/DinoDinerMenu">Menu</a>
+                <a asp-page="/PrivacyPolicy">Privacy Policy</a>
+            </div>
         </footer>
     </div>
 
