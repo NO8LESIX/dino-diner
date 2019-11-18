@@ -17,4 +17,10 @@
     <None Include="wwwroot\images\DinoDiner-32.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MenuTest\MenuTest.csproj" />
+    <ProjectReference Include="..\Menu\Menu.csproj" />
+    <ProjectReference Include="..\PointOfSale\PointOfSale.csproj" />
+  </ItemGroup>
+
 </Project>

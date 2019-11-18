@@ -6,20 +6,27 @@
     <title>Dino-Diner - @ViewData["Title"]</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
-
+    <div id="header-grid">
+        <a asp-page="/Index">
+            <div class="banner-image">
+            </div>
+        </a>
+        <a asp-page="/DinoDinerMenu">Menu</a>
+    </div>
     <div class="container body-content">
+        <hr />
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; 2019 - DinoDiner</p>
-            <div id="grid">
+            <div id="footer-grid">
                 <a asp-page="/About">About Us</a>
                 <a asp-page="/DinoDinerMenu">Menu</a>
                 <a asp-page="/PrivacyPolicy">Privacy Policy</a>

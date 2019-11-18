@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:white;
+    background-color: white;
     color: black;
 }
 
@@ -27,8 +27,8 @@ body {
     background-size: cover;
     position: center;
     color: white;
-    height: 80vh;
-    width: 80vw;
+    height: 15vh;
+    width: 15vw;
 }
 
 /* Place text in the middle of the image */
@@ -40,9 +40,16 @@ body {
     transform: translate(-50%, -50%);
 }
 /*Site-wide grid layout*/
-#grid {
+#footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+/*Site-wide grid layout*/
+#header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
@@ -51,18 +58,61 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 16px;
-    text-align:center;
+    text-align: center;
 }
+/**/
 .about-paragraph {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 16px;
     text-align: center;
 }
-
+/**/
 .flex-container {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+/*Menu grid layout*/
+#menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 100px 1fr 100px 1fr 100px 1fr;
+}
+
+/*Card Style Layout Experiment*/
+.card {
+    width: 25em;
+    height: 350px;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transform: scale(1);
+    visibility: visible;
+    -moz-box-shadow: 0px 1px 5px 0px #676767;
+    -webkit-box-shadow: 0px 1px 5px 0px #676767;
+    box-shadow: 0px 1px 5px 0px #676767;
+}
+.inside-top {
+    width: 100%;
+    height: 150px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.card:hover {
+    cursor: pointer;
+    transform: scale(1);
+    visibility: visible;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+    z-index: 100;
+    position: relative;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    transition-duration: 400ms;
 }
