@@ -20,6 +20,7 @@ namespace Website.Pages
 
         public void OnGet()
         {
+            menu = new Menu();
         }
     }
 }
