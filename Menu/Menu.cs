@@ -6,7 +6,7 @@ namespace DinoDiner.Menu
 {
     public class Menu
     {
-        List<IMenuItem> AvaliablemenuItems
+        public List<IMenuItem> AvaliablemenuItems
         {
             get
             {
@@ -33,7 +33,7 @@ namespace DinoDiner.Menu
             }
 
         }
-        List<IMenuItem> AvaliableEntrees
+        public List<IMenuItem> AvaliableEntrees
         {
             get
             {
@@ -52,34 +52,7 @@ namespace DinoDiner.Menu
 
         }
 
-        List<IMenuItem> AvaliableSides
-        {
-            get
-            {
-                List<IMenuItem> mi = new List<IMenuItem>();
-                mi.Add(new JurassicJava());
-                mi.Add(new Sodasaurus());
-                mi.Add(new Tyrannotea());
-                mi.Add(new Water());
-
-                mi.Add(new Brontowurst());
-                mi.Add(new DinoNuggets());
-                mi.Add(new PrehistoricPBJ());
-                mi.Add(new PterodactylWings());
-                mi.Add(new SteakosaurusBurger());
-                mi.Add(new TRexKingBurger());
-                mi.Add(new VelociWrap());
-
-                mi.Add(new Fryceritops());
-                mi.Add(new MeteorMacAndCheese());
-                mi.Add(new MezzorellaSticks());
-                mi.Add(new Triceritots());
-
-                return mi;
-            }
-
-        }
-        List<IMenuItem> AvaliableDrinks
+        public List<IMenuItem> AvaliableSides
         {
             get
             {
@@ -106,7 +79,34 @@ namespace DinoDiner.Menu
             }
 
         }
-        List<IMenuItem> AvaliableCombos
+        public List<IMenuItem> AvaliableDrinks
+        {
+            get
+            {
+                List<IMenuItem> mi = new List<IMenuItem>();
+                mi.Add(new JurassicJava());
+                mi.Add(new Sodasaurus());
+                mi.Add(new Tyrannotea());
+                mi.Add(new Water());
+
+                mi.Add(new Brontowurst());
+                mi.Add(new DinoNuggets());
+                mi.Add(new PrehistoricPBJ());
+                mi.Add(new PterodactylWings());
+                mi.Add(new SteakosaurusBurger());
+                mi.Add(new TRexKingBurger());
+                mi.Add(new VelociWrap());
+
+                mi.Add(new Fryceritops());
+                mi.Add(new MeteorMacAndCheese());
+                mi.Add(new MezzorellaSticks());
+                mi.Add(new Triceritots());
+
+                return mi;
+            }
+
+        }
+        public List<IMenuItem> AvaliableCombos
         {
             get
             {

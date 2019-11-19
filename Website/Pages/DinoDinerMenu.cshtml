@@ -9,30 +9,58 @@
 <div id="menu-grid">
     <h2> Combos </h2>
     <div class="flex-container">
+    foreach(IMenuItem item in @menu.Combos){
         <li class="card">
             <div class="inside-top">
+                @item.GetType().Name
             </div>
+            <div class="inside-body">
+                <div class="item-description">
+                
+                </div>
         </li>
+        }
     </div>
     <h2> Entrees </h2>
     <div class="flex-container">
+    @foreach(IMenuItem item in @menu.Combos){
         <li class="card">
             <div class="inside-top">
+                @item.GetType().Name
             </div>
+            <div class="inside-body">
+                <div class="item-description">
+                
+                </div>
         </li>
+        }
     </div>
     <h2> Sides </h2>
     <div class="flex-container">
+    @foreach(IMenuItem item in @menu.Combos){
         <li class="card">
             <div class="inside-top">
+                @item.GetType().Name
             </div>
+            <div class="inside-body">
+                <div class="item-description">
+                
+                </div>
         </li>
+        }
     </div>
     <h2> Drinks </h2>
     <div class="flex-container">
+    @foreach(IMenuItem item in @menu.Combos){
         <li class="card">
             <div class="inside-top">
+                @item.GetType().Name
             </div>
+            <div class="inside-body">
+                <div class="item-description">
+                
+                </div>
         </li>
+        }
     </div>
 </div>

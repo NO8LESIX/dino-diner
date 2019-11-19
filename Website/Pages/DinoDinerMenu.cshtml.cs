@@ -12,11 +12,14 @@ namespace Website.Pages
     public class DinoDinerMenuModel : PageModel
     {
 
-        Menu menu;
+        public Menu menu = new Menu();
+        public List<IMenuItem> Combos { get { return menu.AvaliableCombos; } }
+        public List<IMenuItem> Drinks { get { return menu.AvaliableDrinks; } }
+        public List<IMenuItem> Entrees { get { return menu.AvaliableEntrees; } }
+        public List<IMenuItem> Sides { get { return menu.AvaliableSides; } }
 
         public void OnGet()
         {
-            menu = new Menu();
         }
     }
 }
