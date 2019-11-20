@@ -8,18 +8,20 @@
 
 <div id="menu-grid">
     <h2> Combos </h2>
-    <div class="flex-container">
-        @foreach (DinoDiner.Menu.IMenuItem item in @Model.menu.AvaliableCombos)
+    <div class="flex-container-card">
+        @foreach (DinoDiner.Menu.IMenuItem item in @Model.Combos)
         {
             <li class="card">
                 <div class="inside-top">
                     @item.GetType().Name
                 </div>
-                <div class="inside-body">
+                <div class="inside-bottom">
                     <div class="item-description">
-                        <i>
-                            @string.Join( ",", item.Ingredients)
-                        </i>
+                        <p>
+                            <i>
+                                @string.Join(", ", item.Ingredients)
+                            </i>
+                        </p>
                         <p>Price: $@item.Price</p>
                         <p>Calories: @item.Calories</p>
                     </div>
@@ -29,17 +31,19 @@
     </div>
     <h2> Entrees </h2>
     <div class="flex-container">
-        @foreach (DinoDiner.Menu.IMenuItem item in Model.menu.AvaliableEntrees)
+        @foreach (DinoDiner.Menu.IMenuItem item in Model.Entrees)
         {
             <li class="card">
                 <div class="inside-top">
                     @item.GetType().Name
                 </div>
-                <div class="inside-body">
+                <div class="inside-bottom">
                     <div class="item-description">
-                        <i>
-                            @string.Join(",", item.Ingredients)
-                        </i>
+                        <p>
+                            <i>
+                                @string.Join(", ", item.Ingredients)
+                            </i>
+                        </p>
                         <p>Price: $@item.Price</p>
                         <p>Calories: @item.Calories</p>
                     </div>
@@ -49,17 +53,19 @@
     </div>
     <h2> Sides </h2>
     <div class="flex-container">
-        @foreach (DinoDiner.Menu.IMenuItem item in Model.menu.AvaliableSides)
+        @foreach (DinoDiner.Menu.IMenuItem item in Model.Sides)
         {
             <li class="card">
                 <div class="inside-top">
                     @item.GetType().Name
                 </div>
-                <div class="inside-body">
+                <div class="inside-bottom">
                     <div class="item-description">
-                        <i>
-                            @string.Join(",", item.Ingredients)
-                        </i>
+                        <p>
+                            <i>
+                                @string.Join(", ", item.Ingredients)
+                            </i>
+                        </p>
                         <p>Price: $@item.Price</p>
                         <p>Calories: @item.Calories</p>
                     </div>
@@ -69,17 +75,19 @@
     </div>
     <h2> Drinks </h2>
     <div class="flex-container">
-        @foreach (DinoDiner.Menu.IMenuItem item in Model.menu.AvaliableDrinks)
+        @foreach (DinoDiner.Menu.IMenuItem item in Model.Drinks)
         {
             <li class="card">
                 <div class="inside-top">
                     @item.GetType().Name
                 </div>
-                <div class="inside-body">
+                <div class="inside-bottom">
                     <div class="item-description">
-                        <i>
-                            @string.Join(",", item.Ingredients)
-                        </i>
+                        <p>
+                            <i>
+                                @string.Join(", ", item.Ingredients)
+                            </i>
+                        </p>
                         <p>Price: $@item.Price</p>
                         <p>Calories: @item.Calories</p>
                     </div>
