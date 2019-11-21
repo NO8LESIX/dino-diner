@@ -4,7 +4,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: white;
-    color: black;
+    /*color: black;*/
 }
 
 /* Wrapping element */
@@ -12,6 +12,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: black;
 }
 
 /* The banner image */
@@ -28,7 +29,7 @@ body {
     position: center;
     color: white;
     height: 15vh;
-    width: 15vw;
+    width: 15vw;   
 }
 
 /* Place text in the middle of the image */
@@ -128,7 +129,8 @@ body {
 .inside-bottom {
     width: 25em;
     height: 200px;
-    margin: 5px
+    margin: 5px;
+    position: center;    
 }
 
 .card:hover {
