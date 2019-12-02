@@ -12,7 +12,7 @@
 //opens and resizes objects from the left of the screen
 function openNav() {
     document.getElementById("Sidenav").style.width = "250px";
-    document.getElementById("content").style.width = "250px";
+    document.getElementById("content").style.width = "1fr";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
