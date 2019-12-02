@@ -6,9 +6,11 @@
 
 <h1>Menu</h1>
 
+
+
 <div id="menu-grid">
     <h2> Combos </h2>
-    <div class="flex-container-card">
+    <ol class="flex-container-card">
         @foreach (DinoDiner.Menu.IMenuItem item in @Model.Combos)
         {
             <li class="card">
@@ -28,9 +30,9 @@
                 </div>
             </li>
         }
-    </div>
+    </ol>
     <h2> Entrees </h2>
-    <div class="flex-container">
+    <ol class="flex-container">
         @foreach (DinoDiner.Menu.IMenuItem item in Model.Entrees)
         {
             <li class="card">
@@ -50,9 +52,9 @@
                 </div>
             </li>
         }
-    </div>
+    </ol>
     <h2> Sides </h2>
-    <div class="flex-container">
+    <ol class="flex-container">
         @foreach (DinoDiner.Menu.IMenuItem item in Model.Sides)
         {
             <li class="card">
@@ -72,9 +74,9 @@
                 </div>
             </li>
         }
-    </div>
+    </ol>
     <h2> Drinks </h2>
-    <div class="flex-container">
+    <ol class="flex-container">
         @foreach (DinoDiner.Menu.IMenuItem item in Model.Drinks)
         {
             <li class="card">
@@ -94,5 +96,5 @@
                 </div>
             </li>
         }
-    </div>
+    </ol>
 </div>

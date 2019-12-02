@@ -75,12 +75,19 @@ body {
     flex-wrap: nowrap;
     overflow-x: scroll;
 }
+
+
+
 /*Menu grid layout*/
 #menu-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 1fr 100px 1fr 100px 1fr 100px 1fr;
 }
+ol li {
+    list-style-type: none;
+}
+
 
 /*Card Style Layout Experiment*/
 .flex-container-card {
@@ -95,12 +102,10 @@ body {
     flex-wrap: nowrap;
     cursor:pointer;
 }
-
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
 .card {
     width: 25em;
     height: 350px;
@@ -115,7 +120,6 @@ body {
     -webkit-box-shadow: 0px 1px 5px 0px #676767;
     box-shadow: 0px 1px 5px 0px #676767;
 }
-
 .inside-top {
     width: 100%;
     height: 150px;
@@ -125,14 +129,12 @@ body {
     text-align: center;
     z-index: 100;
 }
-
 .inside-bottom {
     width: 25em;
     height: 200px;
     margin: 5px;
     position: center;    
 }
-
 .card:hover {
     cursor: pointer;
     transform: scale(1);
@@ -143,4 +145,63 @@ body {
     position: relative;
     transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
     transition-duration: 400ms;
+}
+
+/* Navbar design and layout */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left:0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+/*Navigation menu links, but they are not used for this project. Adapt them to work with information processing
+    and display
+*/
+.navbar-icon {
+    color: white;
+    background: #818181;
+    font-size: 30px;
+    border: solid;
+    border-color: #818181;
+}
+
+.sidenav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn{
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+#content {
+    transition: margin-left 0.5s;
+    /*padding: 20px;
+        */
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+    padding-top:15px;
+    }
+        .sidenav a {
+            font-size: 18px;
+        }
+
 }

@@ -6,7 +6,7 @@
     <title>Dino-Diner - @ViewData["Title"]</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
@@ -18,20 +18,34 @@
             <div class="banner-image">
             </div>
         </a>
-        <a asp-page="/DinoDinerMenu">Menu</a>
     </div>
+
+
     <div class="container body-content">
-        <hr />
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - DinoDiner</p>
-            <div id="footer-grid">
-                <a asp-page="/About">About Us</a>
-                <a asp-page="/DinoDinerMenu">Menu</a>
-                <a asp-page="/PrivacyPolicy">Privacy Policy</a>
-            </div>
-        </footer>
+
+        <div id="Sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times;</a>
+            <a asp-page="Index">Home</a>
+            <a asp-page="DinoDinerMenu">Dino Diner Menu</a>
+            <a asp-page="PrivacyPolicy">Privacy Policy</a>
+            <a asp-page="About">About Us</a>
+        </div>
+
+        <span class="navbar-icon" onclick="openNav()">&#9776; <!-- Results in ☰ --></span>
+
+        <div id="content">
+            <hr />
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2019 - DinoDiner</p>
+                <div id="footer-grid">
+                    <a asp-page="/About">About Us</a>
+                    <a asp-page="/DinoDinerMenu">Menu</a>
+                    <a asp-page="/PrivacyPolicy">Privacy Policy</a>
+                </div>
+            </footer>
+        </div>
     </div>
 
     <environment include="Development">
