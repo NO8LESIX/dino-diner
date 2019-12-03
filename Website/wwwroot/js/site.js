@@ -12,14 +12,14 @@
 //opens and resizes objects from the left of the screen
 function openNav() {
     document.getElementById("Sidenav").style.width = "250px";
-    document.getElementById("content").style.width = "1fr";
+    document.getElementById("content").style.marginLeft = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 //closes navbar to the left of the screen
 function closeNav() {
     document.getElementById("Sidenav").style.width = "0";
-    document.getElementById("content").style.width = "1fr";
+    document.getElementById("content").style.marginLeft = "0px";
     document.body.style.backgroundColor = "white";
 }
 

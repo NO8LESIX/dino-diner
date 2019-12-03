@@ -9,6 +9,5 @@ namespace DinoDiner.Menu
         double Price { get; }
         uint Calories { get; }
         List<string> Ingredients { get; }
-
     }
 }

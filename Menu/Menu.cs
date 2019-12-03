@@ -96,6 +96,26 @@ namespace DinoDiner.Menu
                 return mi;
             }
         }
+
+        public HashSet<string> PossibleIngredients {
+            get
+            {
+                List<IMenuItem> mi = new List<IMenuItem>();
+                List<string> ingreds = new List<string>();
+                HashSet<string> possibleIngredients = new HashSet<string>();
+
+                foreach (IMenuItem item in this.AvaliablemenuItems) {
+                    foreach (string i in item.Ingredients) {
+                        possibleIngredients.Add(i);
+                    }
+                }
+
+                return possibleIngredients;
+            }
+        }
+
+
+
         public override string ToString()
         {
             List<IMenuItem> mi = new List<IMenuItem>();
