@@ -15,6 +15,9 @@ namespace Website.Pages
         public static Menu menu = new Menu();
 
         [BindProperty]
+        public bool clear { get; set; } = false;
+
+        [BindProperty]
         public string search { get; set; }
 
         [BindProperty]
@@ -27,12 +30,9 @@ namespace Website.Pages
         public float? maximumPrice { get; set; }
 
         [BindProperty]
-        public string order { get; set; }
+        public List<string> excludedIngredients { get; set; } = new List<string>();
 
         public HashSet<string> ingredients = menu.PossibleIngredients;
-
-        [BindProperty]
-        public List<string> excludedIngredients { get; set; } = new List<string>();
 
         private List<IMenuItem> combos = menu.AvaliableCombos;
         public List<IMenuItem> Combos { get { return combos; } set { combos = value; } }
@@ -51,6 +51,12 @@ namespace Website.Pages
         public void OnPost()
         {
             menu = new Menu();
+            if (clear)
+            {
+                ResetFilters();
+                clear = false;
+            }
+
 
             if (search != null)
             {
@@ -191,6 +197,18 @@ namespace Website.Pages
             return results;
         }
 
+        public void ResetFilters()
+        {
+            search = "";
+            category = new List<string>();
+            minimumPrice = (float)0.00;
+            maximumPrice = (float)0.00;
+            excludedIngredients = new List<string>();
+            Combos = menu.AvaliableCombos;
+            Drinks = menu.AvaliableDrinks;
+            Entrees = menu.AvaliableEntrees;
+            Sides = menu.AvaliableSides;
 
+        }
     }
 }
