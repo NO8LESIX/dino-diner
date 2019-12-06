@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using DinoDiner.Menu;
 
-
 namespace Website.Pages
 {
     public class DinoDinerMenuModel : PageModel
@@ -34,14 +33,14 @@ namespace Website.Pages
 
         public HashSet<string> ingredients = menu.PossibleIngredients;
 
-        private List<IMenuItem> combos = menu.AvaliableCombos;
-        public List<IMenuItem> Combos { get { return combos; } set { combos = value; } }
-        public List<IMenuItem> drinks = menu.AvaliableDrinks;
-        public List<IMenuItem> Drinks { get { return drinks; } set { drinks = value; } }
-        public List<IMenuItem> entrees = menu.AvaliableEntrees;
-        public List<IMenuItem> Entrees { get { return entrees; } set { entrees = value; } }
-        public List<IMenuItem> sides = menu.AvaliableSides;
-        public List<IMenuItem> Sides { get { return sides; } set { sides = value; } }
+        private IEnumerable<IMenuItem> combos = menu.AvaliableCombos;
+        public IEnumerable<IMenuItem> Combos { get { return combos; } set { combos = value; } }
+        public IEnumerable<IMenuItem> drinks = menu.AvaliableDrinks;
+        public IEnumerable<IMenuItem> Drinks { get { return drinks; } set { drinks = value; } }
+        public IEnumerable<IMenuItem> entrees = menu.AvaliableEntrees;
+        public IEnumerable<IMenuItem> Entrees { get { return entrees; } set { entrees = value; } }
+        public IEnumerable<IMenuItem> sides = menu.AvaliableSides;
+        public IEnumerable<IMenuItem> Sides { get { return sides; } set { sides = value; } }
 
 
         public void OnGet()
@@ -130,10 +129,14 @@ namespace Website.Pages
 
         }
 
-        public static List<IMenuItem> Search(List<IMenuItem> menu, string term)
+        public static IEnumerable<IMenuItem> Search(IEnumerable<IMenuItem> menu, string term)
         {
-            List<IMenuItem> results = new List<IMenuItem>();
 
+            IEnumerable<IMenuItem> results = new List<IMenuItem>();
+
+            results = menu.Where(item => item.GetType().Name.Contains(term) || item.ToString().Contains(term) || item.Ingredients.Contains(term));
+
+            /*
             foreach (IMenuItem item in menu)
             {
                 if (item.GetType().Name.Contains(term) || item.ToString().Contains(term))
@@ -144,30 +147,42 @@ namespace Website.Pages
                 {
                     results.Add(item);
                 }
-            }
+            }*/
 
             return results;
         }
 
-        public static List<IMenuItem> FilterByMaxPrice(List<IMenuItem> menu, float maxPrice)
+        public static IEnumerable<IMenuItem> FilterByMaxPrice(IEnumerable<IMenuItem> menu, float maxPrice)
         {
-            List<IMenuItem> results = new List<IMenuItem>();
-
+            IEnumerable<IMenuItem> results = menu.Where(item => item.Price <= maxPrice);
+            /*
             foreach (IMenuItem item in menu)
             {
                 if (item.Price <= maxPrice)
                 {
                     results.Add(item);
                 }
-            }
+            }*/
 
             return results;
         }
 
-        public static List<IMenuItem> FilterIngredients(List<IMenuItem> menu, List<string> term)
+        public static IEnumerable<IMenuItem> FilterIngredients(IEnumerable<IMenuItem> menu, List<string> term)
         {
-            List<IMenuItem> results = new List<IMenuItem>();
+            IEnumerable<IMenuItem> results = menu.Where(item =>
+            {
+                foreach (string str in term)
+                {
+                    if (item.Ingredients.Contains(str))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
 
+            );
+            /*
             foreach (IMenuItem item in menu)
             {
                 foreach (string str in term)
@@ -177,22 +192,22 @@ namespace Website.Pages
                         results.Add(item);
                     }
                 }
-            }
+            }*/
 
             return results;
         }
 
-        public static List<IMenuItem> FilterByMinPrice(List<IMenuItem> menu, float minPrice)
+        public static IEnumerable<IMenuItem> FilterByMinPrice(IEnumerable<IMenuItem> menu, float minPrice)
         {
-            List<IMenuItem> results = new List<IMenuItem>();
-
+            IEnumerable<IMenuItem> results = menu.Where(item => item.Price >= minPrice);
+            /*
             foreach (IMenuItem item in menu)
             {
                 if (item.Price >= minPrice)
                 {
                     results.Add(item);
                 }
-            }
+            }*/
 
             return results;
         }
